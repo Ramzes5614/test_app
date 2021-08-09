@@ -9,7 +9,6 @@ class Circle extends CustomPainter {
     double height = size.height - 2;
     double width = size.width - 2;
     final double radius = height / 2;
-    print("Size: $height, $width");
 
     var paint = Paint()..color = color;
     canvas.drawCircle(Offset(size.height / 2, size.width / 2), radius, paint);

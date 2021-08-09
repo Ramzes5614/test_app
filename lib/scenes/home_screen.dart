@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    _value = _checkBoxController.animationSpeed.toDouble();
+    _value = _checkBoxController.animationSpeed.value.toDouble();
     selectedType = CheckBoxTypes.green;
     _checkBoxes = List<CheckBoxWidget>.generate(
       3,

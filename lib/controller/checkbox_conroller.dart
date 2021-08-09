@@ -7,18 +7,20 @@ enum CheckBoxTypes {
 }
 
 ///The controller class for our widgets
-class CheckBoxController extends ChangeNotifier {
-  CheckBoxTypes currentSelectedType = CheckBoxTypes.green;
+class CheckBoxController {
+  ValueNotifier<CheckBoxTypes> currentSelectedType =
+      ValueNotifier<CheckBoxTypes>(CheckBoxTypes.green);
+
   ///animation speed in ms
-  int animationSpeed = 200;
+  ValueNotifier<int> animationSpeed = ValueNotifier<int>(200);
 
   void setCheckBoxType(CheckBoxTypes type) {
-    currentSelectedType = type;
-    notifyListeners();
+    currentSelectedType.value = type;
+    currentSelectedType.notifyListeners();
   }
 
   void setAnimationSpeed(int speed) {
-    animationSpeed = speed;
-    notifyListeners();
+    animationSpeed.value = speed;
+    animationSpeed.notifyListeners();
   }
 }

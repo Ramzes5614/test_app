@@ -5,7 +5,6 @@ class Arrow extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     double height = size.height / 2;
     double width = size.width / 2;
-    print("Size: $height, $width");
     double cx = size.width / 2.2;
     double cy = size.height / 2;
 
