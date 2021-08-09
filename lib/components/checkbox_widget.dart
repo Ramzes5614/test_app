@@ -33,19 +33,22 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget>
     _isSelected = widget.type == widget.checkBoxController.currentSelectedType;
     _duration =
         Duration(milliseconds: widget.checkBoxController.animationSpeed);
-    widget.checkBoxController.addListener(() {
-      setState(() {
-        this._isSelected =
-            widget.checkBoxController.currentSelectedType == widget.type;
-        this._duration =
-            Duration(milliseconds: widget.checkBoxController.animationSpeed);
-      });
-    });
+    widget.checkBoxController.addListener(listener);
     super.initState();
+  }
+
+  void listener() {
+    setState(() {
+      this._isSelected =
+          widget.checkBoxController.currentSelectedType == widget.type;
+      this._duration =
+          Duration(milliseconds: widget.checkBoxController.animationSpeed);
+    });
   }
 
   @override
   void dispose() {
+    widget.checkBoxController.removeListener(listener);
     super.dispose();
   }
 
