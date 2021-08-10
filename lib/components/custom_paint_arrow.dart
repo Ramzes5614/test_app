@@ -11,14 +11,15 @@ class Arrow extends CustomPainter {
     var paint = Paint()..color = Colors.white;
 
     Path path = Path();
-    path.moveTo(cx, cy);
-    path.lineTo(cx + 0.75 * width, cy - 0.61 * height);
-    path.lineTo(cx + 0.75 * width, cy - 0.44 * height);
-    path.lineTo(cx - 0.03 * width, cy + 0.19 * height);
+    path.moveTo(cx - 0.51 * width, cy - 0.03 * height);
+    path.lineTo(cx - 0.40 * width, cy - 0.12 * height);
 
-    path.lineTo(cx - 0.3 * width, cy - 0.24 * height);
-    path.lineTo(cx - 0.2 * width, cy - 0.32 * height);
-    path.lineTo(cx, cy);
+    path.lineTo(cx - 0.10 * width, cy + 0.25 * height);
+    path.lineTo(cx + 0.64 * width, cy - 0.34 * height);
+
+    path.lineTo(cx + 0.73 * width, cy - 0.22 * height);
+    path.lineTo(cx - 0.12 * width, cy + 0.46 * height);
+    path.lineTo(cx - 0.51 * width, cy - 0.03 * height);
 
     canvas.drawPath(path, paint);
   }
